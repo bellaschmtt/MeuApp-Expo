@@ -1,26 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View } from "react-native";
+import { Button, Text } from "react-native-paper";
+
 
 export default function App() {
+  return <RootNavigation />;
+  
+}
+const Stack = createNativeStackNavigator();
+
+function RootNavigation() {
   return (
-    <View style={styles.container}>
-      <HomeScreen/>
-      <SobreScreen/>
-      <ContatoScreen/>
-      <SurpresaScreen/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-function HomeScreen(){
-  return(
+function HomeScreen() {
+  return (
     <View>
       <Text>Sou a HomeScreen</Text>
+      <Button mode="contained">Ir para o Sobre</Button>
     </View>
-
   );
 }
-function SobreScreen(){
+function AboutScreen(){
+  return(
+    <View>
+      <Text>Pág. Sobre</Text>
+    </View>
+  )
+}
+/*
+{
+   function SobreScreen(){
   return(
     <View>
       <Text>Isabella</Text>
@@ -60,4 +77,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+}); 
+}*/
