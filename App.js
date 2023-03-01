@@ -1,24 +1,19 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
-import { Button, Text } from "react-native-paper";
-
-
+import RootNavigation from "./src";
 export default function App() {
   return <RootNavigation />;
   
 }
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
-function RootNavigation() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+// function RootNavigation() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 
 
 

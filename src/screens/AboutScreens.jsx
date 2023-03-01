@@ -1,9 +1,12 @@
 import { View } from "react-native";
 import { Text } from "react-native-paper";
+import styles from "../utils/styles";
 
-function AboutScreen(){
+export default function AboutScreen(){
     return(
-      <View>
+      <View
+        style={styles.container}
+      >
         <Text>Pág. Sobre</Text>
       </View>
     )
