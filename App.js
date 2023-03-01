@@ -20,21 +20,8 @@ function RootNavigation() {
   );
 }
 
-function HomeScreen() {
-  return (
-    <View>
-      <Text>Sou a HomeScreen</Text>
-      <Button mode="contained">Ir para o Sobre</Button>
-    </View>
-  );
-}
-function AboutScreen(){
-  return(
-    <View>
-      <Text>Pág. Sobre</Text>
-    </View>
-  )
-}
+
+
 /*
 {
    function SobreScreen(){
