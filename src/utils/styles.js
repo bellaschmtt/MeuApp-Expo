@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+       
+        // button:{
+        //    padding: '4px',
+        // },
     },
 });
 

@@ -3,17 +3,28 @@ import { Button, Text } from "react-native-paper";
 import styles from "../utils/styles";
 
 export default function HomeScreen({ navigation }) {
-    
-    
-    return (
-      <View 
-        style={styles.container}
+  return (
+    <View style={styles.container}>
+      <Text>Sou a HomeScreen</Text>
+      <Button
+        mode="outlined"
+        onPress={() => {
+          navigation.navigate("AboutScreen");
+        }}
+        style={{
+          marginBottom: "20px",
+        }}
       >
-        <Text>Sou a HomeScreen</Text>
-        <Button 
-        mode="contained"
-        onPress={() => { navigation.navigate("AboutScreen")}}
-        >Ir para o Sobre</Button>
-      </View>
-    );
-  }
+        Ir para o Sobre com espaço
+      </Button>
+      <Button
+        mode="outlined"
+        onPress={() => {
+          navigation.navigate("AboutScreen");
+        }}
+      >
+        Ir para o Sobre
+      </Button>
+    </View>
+  );
+}
