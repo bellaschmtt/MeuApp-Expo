@@ -35,7 +35,11 @@ const Tabs = createMaterialBottomTabNavigator();
 function TabsNavigation() {
   return (
     <Tabs.Navigator>
-      <Tabs.Screen name="HomeScreen" component={HomeScreen} />
+      <Tabs.Screen 
+        name="HomeScreen" 
+        component={HomeScreen} 
+        
+      />
       <Tabs.Screen name="OutroScreen" component={HomeScreen} />
       <Tabs.Screen name="AboutScreen" component={HomeScreen} />
     </Tabs.Navigator>
