@@ -2,9 +2,9 @@ import { View } from "react-native";
 import { ActivityIndicator, Text } from "react-native-paper";
 import styles from "../utils/styles";
 
-export default function SplashScreen({navigation}) {
+export default function SplashScreen({ navigation }) {
   setTimeout(() => {
-    navigation.navigate("HomeScreen");
+    navigation.navigate("TabsNavigation");
   }, 3000);
   return (
     <View style={styles.container}>

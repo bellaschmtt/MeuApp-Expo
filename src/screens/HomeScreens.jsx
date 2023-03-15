@@ -4,7 +4,7 @@ import styles from "../utils/styles";
 
 export default function HomeScreen({ navigation }) {
   setTimeout(() => {
-    navigation.navigate("HomeScreen");
+    navigation.navigate("TabNavigator");
   }, 3000);
 
   return (
