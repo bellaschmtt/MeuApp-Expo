@@ -13,3 +13,4 @@ export default function SplashScreen({ navigation }) {
     </View>
   );
 }
+// isso é uma tela que confirma se o personagem esta logado, 
