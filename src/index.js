@@ -4,9 +4,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreens";
 import LoginScreen from "./screens/LoginScreens";
 // import AboutScreen from "./screens/AboutScreen"
-import CadastroScreens from "./screens/CadastroScreens"
+import CadastroScreens from "./screens/CadastroScreens";
 import SplashScreen from "./screens/SplashScreen";
-import RegisterScreens from "./screens/RegisterScreens"
+import RegisterScreens from "./screens/RegisterScreens";
+import FetchNews from "./screens/FetchNews";
 // import { Image } from "react-native-web";
 
 const Stack = createNativeStackNavigator();
@@ -39,9 +40,10 @@ const Tabs = createMaterialBottomTabNavigator();
 function TabsNavigation() {
   return (
     <Tabs.Navigator>
-      <Tabs.Screen name="Home" component={HomeScreen} />
-      <Tabs.Screen name="Login" component={LoginScreen} />
-      <Tabs.Screen name="Cadastro" component={RegisterScreens} />
+      <Tabs.Screen name="HomeScreen" component={HomeScreen} />
+      <Tabs.Screen name="LoginScreen" component={LoginScreen} />
+      <Tabs.Screen name="CadastroScreen" component={RegisterScreens} />
+      <Tabs.Screen name="FetchNews" component={FetchNews} />
     </Tabs.Navigator>
   );
 }

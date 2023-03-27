@@ -1,45 +1,46 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { TextInput,Button } from "react-native-paper";
-import { View } from "react-native-web";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { View } from "react-native";
+import { Button, Text, TextInput } from "react-native-paper";
 import { auth } from "../config/firebase";
 import styles from "../utils/styles";
-// import { Button } from "react-native";
-
-export default function LoginScreen() {
-  function handleRegister(){
-    createUserWithEmailAndPassword(auth, email, senha)
-    .then((userCredential) => {
-      console.log("Usuário cadastro com sucesso!");
-      Navigator.navigate("LoginScreens");
-    }
-    )
-    .catch((error) =>{
-      console.log("")
-    }
-    )
+export default function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  function handleLogin() {
+    signInWithEmailAndPassword(auth, email, senha)
+      .then((userCredential) => {
+        console.log("Usuário logado com sucesso");
+        navigation.navigate("HomeScreen");
+      })
+      .catch((error) => {
+        console.log("Erro ao logar usuário", error);
+        const errorCode = error.code;
+        if (errorCode === "auth/wrong-password") {
+          alert("Senha incorreta.");
+        }
+      });
   }
   return (
     <View style={styles.container}>
-      <TextInput label="Emai" placeholder="Digite seu email"
-      style={{
-        marginBottom:"20px",
-      }}
+      <Text>Pág. Login</Text>
+      <TextInput
+        label="Email"
+        placeholder="Digite seu E-mail"
+        value={email}
+        onChangeText={setEmail}
       />
+
       <TextInput
         label="Senha"
         placeholder="Digite sua senha"
         secureTextEntry={true}
-        style={{
-          marginBottom:"20px",
-        }}
+        value={senha}
+        onChangeText={setSenha}
       />
-      <Button
-        style={{
-          marginButton:"20px",
-        }}
-        mode="outlined"
-      >
-      Entrar
+
+      <Button mode="contained" onPress={handleLogin}>
+        Entrar
       </Button>
     </View>
   );

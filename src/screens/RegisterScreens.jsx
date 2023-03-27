@@ -5,7 +5,7 @@ import { Button, Paragraph, TextInput } from "react-native-paper";
 import styles from "../utils/styles";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
-export default function RegisterScreens() {
+export default function RegisterScreens({ navigation }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -16,8 +16,8 @@ export default function RegisterScreens() {
     createUserWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
         console.log("Usuário cadastrado com sucesso!");
-        Navigation.navigate("LoginScreens");
-        // acima a tela de cadastro direciona para login 
+        navigation.navigate("LoginScreen");
+        // acima a tela de cadastro direciona para login
       })
       .catch((error) => {
         console.log("erro ao cadastrar usuário!", error);
@@ -55,20 +55,7 @@ export default function RegisterScreens() {
           onChangeText={setSenha}
           mode="outlined"
         />
-        {/* <TextInput
-          placeholder="Confirme sua Senha"
-          secureTextEntry={true}
-          mode="outlined"
-        /> */}
-        <Button
-          mode="contained"
-          onPress={() => {
-            // navigation.navigate("HomeScreen");
-            // mode = "outlined";
-          }}
-        >
-          Cadastre-se
-        </Button>
+
         <Button onPress={handleRegister}>Registre-se</Button>
       </View>
     </View>
